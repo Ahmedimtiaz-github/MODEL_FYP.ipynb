@@ -63,8 +63,8 @@ Hugging Face Transformers Documentation: https://huggingface.co/docs/transformer
 
 📞 Contact
 Email: ahmedimtqureshi@gmail.com
-LinkedIn: https://linkedin.com/in/YourLinkedInProfile
-GitHub: https://github.com/YourUsername
+LinkedIn: [https://linkedin.com/in/YourLinkedInProfile](https://www.linkedin.com/in/muhammad-ahmed-imtiaz-68332b282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+GitHub: (https://github.com/Ahmedimtiaz-github)
 
 🪪 License
 This project is licensed under the MIT License - see the LICENSE file for details.
