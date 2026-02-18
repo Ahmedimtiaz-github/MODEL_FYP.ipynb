@@ -1,72 +1,133 @@
-# MODEL_FYP.ipynb
-Sentiment Analysis of Uber Reviews Using BERT
+# 🚗 Sentiment Analysis BERT Model — FYP
 
-This repository contains the code and documentation for a sentiment analysis pipeline built using a fine-tuned BERT model on the Uber Reviews dataset. This project was developed as part of my Final Year Project (FYP) at NUML University under the BS Artificial Intelligence program.
+A **BERT-based sentiment analysis model** fine-tuned on an **Uber reviews dataset**, developed as part of the Final Year Project (FYP) for an **AI-based Transport App** at the **National University of Modern Languages (NUML)**.
 
-🚀 Project Overview
+---
 
-Name: Feedback Flow (Sentiment Analysis Module)Role: Backend Lead & Model DeveloperObjective: Fine-tune a pre-trained BERT model to classify Uber customer reviews into positive, negative, and neutral sentiments, and serve predictions via a RESTful API built with Flas
+## ✨ Overview
 
-Set up a virtual environment (recommended)
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\\Scripts\\activate
+This project fine-tunes a pre-trained **BERT (Bidirectional Encoder Representations from Transformers)** model to classify user sentiments from Uber ride reviews. The model is designed to integrate into a university transport application, enabling real-time feedback analysis to improve service quality.
 
-Install dependencies
-pip install --upgrade pip
-pip install -r requirements.txt
+---
 
-🧰 Usage
+## 🎯 Key Features
 
-1. Data Preprocessing
-Clean and preprocess the raw Uber review dataset:
-python src/train.py --mode preprocess --input data/uber_reviews_raw.csv --output data/uber_reviews_cleaned.csv
+| Feature | Description |
+|---|---|
+| 🧠 **BERT Fine-Tuning** | Transfer learning on a pre-trained BERT model for domain-specific sentiment classification |
+| 📊 **Uber Reviews Dataset** | Trained on real-world Uber ride review data for practical relevance |
+| 🏷️ **Sentiment Classification** | Classifies reviews into sentiment categories (e.g., Positive, Negative, Neutral) |
+| 🎓 **University FYP** | Developed as part of an AI-based transport application for NUML |
+| 🐍 **Pure Python** | Entire pipeline implemented in Python |
 
-2. Model Training
-Fine-tune the BERT model on the preprocessed dataset:
-python src/train.py --mode train \
-    --input data/uber_reviews_cleaned.csv \
-    --model_name bert-base-uncased \
-    --epochs 3 \
-    --batch_size 16 \
-    --learning_rate 2e-5 \
-    --output_dir models/
+---
 
-3. Batch Prediction
+## 🛠️ Tech Stack
 
-Run batch predictions on new data:
-Payload: {"review": "Your review text here."}
-Response: {"sentiment": "positive"}
+- **Language**: Python 3.x
+- **Deep Learning Framework**: PyTorch / TensorFlow
+- **NLP Model**: BERT (`bert-base-uncased` or similar)
+- **Libraries**: Hugging Face Transformers, scikit-learn, Pandas, NumPy, Matplotlib
+- **Environment**: Jupyter Notebook
 
-📊 Model Performance
-Accuracy
-93%
-Precision
-0.88
-Recall
-0.90
-F1-Score
-0.89
+---
 
-🔍 Methodology
-Data Collection & Cleaning: Removed duplicates, non-English reviews, and neutral noise.
-Tokenization: Used BertTokenizer from Hugging Face Transformers.
-Fine-tuning: Employed BertForSequenceClassification with cross-entropy loss.
-Evaluation: Split data into train (80%), validation (10%), and test (10%) sets.
+## 📁 Project Structure
 
-📝 Contributions
-Muhammad Ahmed Imtiaz – Data preprocessing, model fine-tuning, API development.
-Supervisor: DR Moiz ullah Ghauri, Department of Computer Science, NUML University.
+```
+MODEL_FYP.ipynb/
+├── MODEL_FYP.ipynb        # Main notebook — data loading, preprocessing, BERT fine-tuning, evaluation
+└── README.md              # Project documentation
+```
 
-📚 References
-Devlin, J. et al. (2019). BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.
-Hugging Face Transformers Documentation: https://huggingface.co/docs/transformers
+---
 
-📞 Contact
-Email: ahmedimtqureshi@gmail.com
-LinkedIn: [https://linkedin.com/in/YourLinkedInProfile](https://www.linkedin.com/in/muhammad-ahmed-imtiaz-68332b282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
-GitHub: (https://github.com/Ahmedimtiaz-github)
+## 🚀 Getting Started
 
-🪪 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Prerequisites
 
+- Python 3.8+
+- Jupyter Notebook or JupyterLab
+- GPU recommended for faster training (Google Colab works great)
 
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Ahmedimtiaz-github/MODEL_FYP.ipynb.git
+cd MODEL_FYP.ipynb
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install transformers torch torchvision pandas numpy scikit-learn matplotlib tqdm
+```
+
+### 3. Run the Notebook
+
+```bash
+jupyter notebook MODEL_FYP.ipynb
+```
+
+Or open in **Google Colab** for GPU-accelerated training.
+
+---
+
+## 📈 Model Pipeline
+
+```
+Uber Reviews Dataset
+        │
+        ▼
+┌─────────────────┐
+│  Data Cleaning   │  ← Remove noise, handle missing values
+│  & Preprocessing │  ← Tokenization with BERT tokenizer
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  BERT Model      │  ← Fine-tune pre-trained BERT
+│  Fine-Tuning     │  ← Add classification head
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Evaluation      │  ← Accuracy, Precision, Recall, F1-Score
+│  & Metrics       │  ← Confusion Matrix
+└────────┬────────┘
+         │
+         ▼
+   Sentiment Predictions
+   (Positive / Negative / Neutral)
+```
+
+---
+
+## 📊 Evaluation Metrics
+
+The model is evaluated using standard NLP classification metrics:
+
+- **Accuracy** — Overall correctness
+- **Precision** — Positive predictive value
+- **Recall** — Sensitivity / True positive rate
+- **F1-Score** — Harmonic mean of precision and recall
+- **Confusion Matrix** — Visual breakdown of predictions
+
+---
+
+## 🎓 About the Project
+
+This model is a core component of an **AI-based university transport application** developed as a Final Year Project at **NUML (National University of Modern Languages)**. The sentiment analysis module processes user feedback on transport services, enabling:
+
+- 📋 Automated review classification
+- 📈 Service quality monitoring
+- 🔔 Alert generation for negative sentiment trends
+- 📊 Dashboard-ready sentiment summaries
+
+---
+
+## 🤝 Author
+
+**M. Ahmed Imtiaz**
+- GitHub: [@Ahmedimtiaz-github](https://github.com/Ahmedimtiaz-github)
+- University: National University of Modern Languages (NUML)
